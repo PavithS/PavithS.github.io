@@ -6,10 +6,11 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
+        "url": "https://raw.githubusercontent.com/PavithS/PavithS.github.io/main/worldmap.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
       },
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "tooltip": {"field": "properties.NAME", "type": "nominal", "title": "Country"}
     },
     {
       "data": {
@@ -18,7 +19,7 @@
       },
       "transform": [
         {
-          "lookup": "properties.NAME",
+          "lookup": "properties.NAME_SORT",
           "from": {
             "data": {
               "url": "https://raw.githubusercontent.com/PavithS/PavithS.github.io/main/Immigration%202019.csv"
